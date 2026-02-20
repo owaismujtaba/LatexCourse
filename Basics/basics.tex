@@ -1,0 +1,92 @@
+\documentclass[12pt,a4paper]{article}
+%\documentclass{report}
+\usepackage[utf8]{inputenc}
+\usepackage{fontenc}
+\usepackage{mathptmx}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{ifluatex}
+\usepackage{xcolor}
+\usepackage{framed}
+
+\usepackage[left=2cm,right=3cm,top=2cm,bottom=2cm]{geometry}
+
+\title{My Document}
+\author{Owais Mujtaba Khanday}
+
+\begin{document}
+	\maketitle
+	
+	\section{Different Text Styles}
+	These are the different Text Styles
+	\textbf{Bold Text}, \textit{Italic Text}, \textsc{Captilized}
+	\section{Different Font Styles}
+	\fontfamily{ptm}\selectfont ptm family selected, 
+	\fontfamily{qcr}\selectfont qrc family selected,
+	\fontfamily{ppl}\selectfont ppl family selected,
+	\fontfamily{put}\selectfont put family selected,
+	
+	\section{Text rotation and coloring}
+	\rotatebox{10}{10 degrees}, 
+	\rotatebox{20}{20 degrees},
+	\colorbox{yellow}{yellow text background, \color{blue} blue text yellow background}
+	
+	\fbox{\colorbox{yellow}{Added fbox to higlight border, \color{blue} blue text yellow background}}
+	
+	\makebox[5cm][r]{makebox with width of 5cm}
+	\rotatebox[origin=c,x=10pt,y=5pt,units=-360]{0}
+	{	
+		\colorbox{yellow}{yellow}
+		\colorbox{olive}{olive}
+	}
+	\section{Exercise}
+		Create a LaTeX document that includes:
+	
+		\subsection{1}
+			Your name rotated 90 degrees.	
+		\subsection{2} 
+			A word with each letter at a different height (like a wave).	
+		\subsection{3}
+		 	A text box with color and border background.	
+		\subsection{4} 
+			A phrase where some words are rotated at different angles.	
+	\section{Solution}
+		These are the solutions for the exercise
+		\subsection{1}
+			\rotatebox[origin=, x= 20pt, y=30pt, units=-360]{90}{Owais Mujtaba Khanday}
+		\subsection{2}
+			\textbf{Wave Word:} 
+			\raisebox{0pt}{W}%
+			\raisebox{2pt}{a}%
+			\raisebox{5pt}{v}%
+			\raisebox{7pt}{y}%
+			\raisebox{5pt}{n}%
+			\raisebox{2pt}{e}%
+			\raisebox{0pt}{s}%
+			\raisebox{-2pt}{s}
+		\subsection{3}
+			\fbox{\colorbox{green}{text with green background in frame}}
+		\subsection{4}
+			The text below is with 10 degree increment from the origin 
+			
+			\rotatebox{10}{I} \rotatebox{20}{am} \rotatebox{30}{rotating} \rotatebox{40}{10 degrees} \rotatebox{50}{each} \rotatebox{60}{word}
+		
+	\section{Framed}
+		The section shows how to put any text in a frame and choose the background color as well
+		
+		\begin{framed}
+			This is a framed paragraph
+		\end{framed}
+			\definecolor{shadecolor}{rgb}{1,0.9,0.9}
+		\begin{shaded}
+			This is framed colors
+		\end{shaded}
+		This is the equation
+		
+		\begin{equation}
+			This is the equation === 		
+			\label{eq:onda}
+			\frac{\partial^2 u}{\partial t^2} = c^2 \nabla^2 u
+		\end{equation}
+
+\end{document}
