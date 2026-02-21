@@ -4,17 +4,14 @@ This repository contains a collection of LaTeX projects developed as part of an 
 
 ## Project Structure
 
-- **[Basics/](file:///home/owais/Desktop/LatexCourse/Basics/)**: An introductory guide demonstrating core LaTeX features, including:
-    - Text styles (bold, italic, small caps).
-    - Font family manipulations.
-    - Text rotation and color boxes.
-    - Mathematical typesetting and framed environments.
+- **[Basics/](file:///home/owais/Desktop/LatexCourse/Basics/)**: An introductory guide demonstrating core LaTeX features.
+    - Main File: `Basics/basics.tex`
+    - Demonstrates text styles, font manipulations, math, and framed environments.
 - **[poster/](file:///home/owais/Desktop/LatexCourse/poster/)**: A research poster (A0 size) titled *"Fragmentation Dynamics in Global Trade: G7 vs. BRICS+"*.
-    - Uses the `beamerposter` package.
-    - Features data-driven visualizations of trade decoupling and network modularity.
-    - Implements advanced layout techniques with `tcolorbox` and `multicol`.
+    - Main File: `poster/poster.tex`
+    - Features data-driven visualizations of trade decoupling and network modularity using `beamerposter`.
 - **[presentations/](file:///home/owais/Desktop/LatexCourse/presentations/)**: Beamer slides for project presentations.
-- **[Biblo/](file:///home/owais/Desktop/LatexCourse/Biblo/)**: Directory for managing bibliography files and references.
+- **[Biblo/](file:///home/owais/Desktop/LatexCourse/Biblo/)**: Showing biblograpy usage using bibitem and bibtex
 
 ## Getting Started
 
@@ -35,4 +32,4 @@ For documents with bibliographies, remember to run `bibtex` between `pdflatex` p
 
 ## Author
 **Owais Mujtaba Khanday**  
-Network Science & Geopolitics Department
+CITIC-UGR
