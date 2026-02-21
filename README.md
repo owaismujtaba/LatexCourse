@@ -4,19 +4,19 @@ This repository contains a collection of LaTeX projects developed as part of an 
 
 ## Project Structure
 
-- **[Basics/](file:///home/owais/Desktop/LatexCourse/Basics/)**: Core LaTeX features and guide.
-    - `Basics/basics.tex` ([View PDF](file:///home/owais/Desktop/LatexCourse/Basics/basics.pdf))
-    - `Basics/book.tex` ([View PDF](file:///home/owais/Desktop/LatexCourse/Basics/book.pdf))
-- **[poster/](file:///home/owais/Desktop/LatexCourse/poster/)**: Research poster on trade fragmentation.
-    - `poster/poster.tex` ([View PDF](file:///home/owais/Desktop/LatexCourse/poster/poster.pdf))
-- **[presentations/](file:///home/owais/Desktop/LatexCourse/presentations/)**: Beamer presentation slides.
-    - `presentations/document.tex` ([View PDF](file:///home/owais/Desktop/LatexCourse/presentations/document.pdf))
-- **[Biblo/](file:///home/owais/Desktop/LatexCourse/Biblo/)**: Bibliography management examples.
-    - `Biblo/biblography.tex` ([View PDF](file:///home/owais/Desktop/LatexCourse/Biblo/biblography.pdf))
-    - `Biblo/paperusing.bib.tex` ([View PDF](file:///home/owais/Desktop/LatexCourse/Biblo/paperusing.bib.pdf))
-- **[letters_etc/](file:///home/owais/Desktop/LatexCourse/letters_etc/)**: Miscellaneous LaTeX documents.
-    - `letters_etc/letter.tex` ([View PDF](file:///home/owais/Desktop/LatexCourse/letters_etc/letter.pdf))
-    - `letters_etc/memo.tex` ([View PDF](file:///home/owais/Desktop/LatexCourse/letters_etc/memo.pdf))
+- **[Basics/](Basics/)**: Core LaTeX features and guide.
+    - `Basics/basics.tex` ([View PDF](Basics/basics.pdf))
+    - `Basics/book.tex` ([View PDF](Basics/book.pdf))
+- **[poster/](poster/)**: Research poster on trade fragmentation.
+    - `poster/poster.tex` ([View PDF](poster/poster.pdf))
+- **[presentations/](presentations/)**: Beamer presentation slides.
+    - `presentations/document.tex` ([View PDF](presentations/document.pdf))
+- **[Biblo/](Biblo/)**: Bibliography management examples.
+    - `Biblo/biblography.tex` ([View PDF](Biblo/biblography.pdf))
+    - `Biblo/paperusing.bib.tex` ([View PDF](Biblo/paperusing.bib.pdf))
+- **[letters_etc/](letters_etc/)**: Miscellaneous LaTeX documents.
+    - `letters_etc/letter.tex` ([View PDF](letters_etc/letter.pdf))
+    - `letters_etc/memo.tex` ([View PDF](letters_etc/memo.pdf))
 
 ## Getting Started
 
