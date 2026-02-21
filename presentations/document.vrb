@@ -1,0 +1,17 @@
+\frametitle{Hyperlinks: \texttt {hyperref}}
+Essential for digital documents. Recommended configuration:
+		
+		\begin{lstlisting}[language=TeX]
+			\hypersetup{
+				colorlinks=true,
+				linkcolor=blue,
+				urlcolor=cyan,
+				pdftitle={Project Report}
+			}
+		\end{lstlisting}
+		
+		\begin{itemize}
+			\item \textbf{\textbackslash href\{url\}\{text\}:} External link with a custom name.
+			\item \textbf{\textbackslash url\{url\}:} Displays the clickable web address.
+			\item \textbf{\textbackslash ref\{label\}:} Internal jump to sections or figures.
+		\end{itemize}

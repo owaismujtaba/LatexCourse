@@ -1,0 +1,105 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usecolortheme{beaver} 
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{tcolorbox}
+\usepackage{graphicx} % Required for images
+
+
+\title{Fragmentation Dynamics in Global Trade}
+\subtitle{G7 vs. BRICS+: Decoupling, Re-routing, and Systemic Vulnerability}
+\author{Owais Mujtaba}
+\date{2010--2024 Analysis}
+
+\begin{document}
+
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+
+	\begin{frame}{Agenda}
+		\tableofcontents
+	\end{frame}
+	
+
+	\section{Strategic Decoupling}
+	\begin{frame}{Declining G7--BRICS+ Trade Integration}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\textwidth, height=0.4\textheight]{G7_BRICS_Decoupling_Figure.pdf}
+			\setbeamerfont{caption}{size=\footnotesize}
+			\caption{\textbf{Direct Decoupling:} Trade share ($S_t$) as \% of global commerce. Shaded area (Post-2018) shows accelerated decoupling following the trade war.}
+		\end{figure}
+		\small
+		\begin{itemize}
+			\item \textbf{Significant Downward Trend:} Regression analysis confirms a steady decline with a year coefficient of $\beta = -0.0177$ ($p < 0.001$), indicating a consistent annual erosion of direct bilateral trade.
+			\item \textbf{Geopolitical Inflection:} The shaded post-2018 area highlights an acceleration in decoupling, where trade organization shifts from purely economic efficiency to geopolitical alignment.
+		\end{itemize}
+	\end{frame}
+	
+	
+	
+	\section{Network Structure}
+	\begin{frame}{Figure 2: Absence of Structural Fragmentation}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\textwidth, height=0.4\textheight]{H3_Modularity.pdf} 
+			\setbeamerfont{caption}{size=\footnotesize}{
+			\caption{\textbf{Inertial Integration:} Network modularity ($Q$) remains negative, indicating cross-bloc dependencies outweigh regional clustering.}}
+		\end{figure}
+		
+		{\tiny
+			\begin{itemize}
+				\item \textbf{Rejection of Fragmentation (H3):} Mann-Kendall tests ($p = 0.075$) confirm the absence of a fragmentation trend. Modularity ($Q$) stays below zero, signifying that nodes connect across group peripheries rather than within isolated blocs.
+				\item \textbf{Resilience via Interdependence:} During the 2020 pandemic, modularity reached its most negative point ($Q = -0.031$), suggesting crises actually escalate the functional necessity of cross-bloc partnerships over "friend-shoring."
+			\end{itemize}
+		}
+	\end{frame}
+	
+
+	\section{Geopolitical Alignment}
+	\begin{frame}{Geopolitical Realignment (ARI)}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\textwidth, height=0.4\textheight]{trade_alignment_ari_zscore}
+			\caption{\textbf{Regime Shift:} The Adjusted Rand Index (ARI) spike in 2024 shows trade clusters finally aligning with geopolitical blocs ($p < 0.01$).}
+		\end{figure}
+	\end{frame}
+	
+	% --- SECTION 4: Systemic Vulnerability ---
+	\section{Systemic Vulnerability}
+	\begin{frame}{Figure 4: Resilience Loss Index (RLI)}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\textwidth, height=0.4\textheight]{RLI_ZScore}
+			\caption{\textbf{Systemic Fragility:} The rise in RLI through 2023 indicates trade concentration in critical "bottleneck" states.}
+		\end{figure}
+	\end{frame}
+	
+	% --- SECTION 5: Summary ---
+	\section{Conclusion}
+	\begin{frame}{Summary of Findings}
+		\begin{itemize}
+			\item \textbf{Hypothesis 1 (Confirmed):} Significant decline in G7-BRICS+ trade share.
+			\item \textbf{Hypothesis 3 (Confirmed):} Global trade network remains topographically unified.
+			\item \textbf{Final Insight:} We are seeing a "structural rupture"—decoupling in volume, but not in network connectivity.
+		\end{itemize}
+		
+		\begin{tcolorbox}[colback=red!5, colframe=red!75!black, title=Future Outlook]
+			The 2024 ARI spike suggests the beginning of a "re-binarization" of the international economic order.
+		\end{tcolorbox}
+	\end{frame}
+	
+	% Final Slide
+	\begin{frame}
+		\centering
+		\Huge Questions?
+		\vspace{1cm}
+		\normalsize \textbf{Thank you for your attention!}
+	\end{frame}
+	
+\end{document}
