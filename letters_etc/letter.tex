@@ -4,14 +4,37 @@
 \usepackage[english]{babel}
 \usepackage{geometry}      
 \usepackage{hyperref}       
-\geometry{left=2.5cm, right=2.5cm, top=2cm, bottom=2cm}
+\usepackage{eso-pic}
+\usepackage{graphicx}
 
+\geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=2cm}
+
+% logo box
+\newsavebox{\mylogo}
+\savebox{\mylogo}{%
+	\parbox{4cm}{%
+		\centering%
+		\includegraphics[width=2cm]{X08852308}\\ 
+		{\scriptsize\textbf{\emph{Computer Speech and Language}\\ Elsevier}}%
+	}%
+}
+
+% logo in the top right
+\newcommand{\AddRightLogo}{%
+	\AddToShipoutPictureBG*{% 
+		\AtPageUpperLeft{%
+			\put(\LenToUnit{14.5cm},\LenToUnit{-3cm}){\usebox{\mylogo}}%
+		}%
+	}%
+}
 
 \address{Editorial Office \\ Computer Speech \& Language \\ Elsevier Science}
 \signature{The Editorial Committee \\ \textit{Ref: YCSLA 101964}}
 \date{February 21, 2026}
 
 \begin{document}
+	% 3. Call the command here
+	\AddRightLogo 
 	
 	\begin{letter}{Owais Mujtaba Khanday, et al. \\ University of Granada \\ Spain}
 		
@@ -24,18 +47,17 @@
 			\item \textbf{PII:} S0885-2308(26)00027-6
 			\item \textbf{DOI:} \url{https://doi.org/10.1016/j.csl.2026.101964}
 		\end{itemize}
-	
+		
 		\begin{description}
 			\item[Received:] 31 May 2025
 			\item[Revised:] 20 December 2025
 			\item[Accepted:] 20 February 2026
 		\end{description}
 		
-		The "Journal Pre-proof" version will be available shortly. Please review the proofs carefully, paying close attention to the mathematical formulas  and the multimodal data tables  to ensure technical accuracy.
+		The "Journal Pre-proof" is available at \url{https://www.sciencedirect.com/science/article/abs/pii/S0885230826000276}. Please review the proofs carefully, paying close attention to the mathematical formulas and the multimodal data tables to ensure technical accuracy.
 		
-	\closing{Yours sincerely, \\ Eiditer in Chief}
-		 
-		
+		\closing{Yours sincerely, \\ Editor-in-Chief}
+		\cc{Dr. Moore}
 		
 	\end{letter}
 \end{document}
