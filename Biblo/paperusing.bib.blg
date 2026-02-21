@@ -1,0 +1,95 @@
+This is BibTeX, Version 0.99d (TeX Live 2025/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: paperusing.bib.aux
+The style file: ieeetr.bst
+Database file #1: bib.bib
+Repeated entry---line 374 of file bib.bib
+ : @book{baldwin2016
+ :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 442 of file bib.bib
+ : @article{gereffi2020
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 452 of file bib.bib
+ : @article{miroudot2020
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 555 of file bib.bib
+ : @article{lovely2022
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 565 of file bib.bib
+ : @techreport{freund2023
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 574 of file bib.bib
+ : @book{jackson2010
+ :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 592 of file bib.bib
+ : @incollection{head2014
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 603 of file bib.bib
+ : @article{farrell2019
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 696 of file bib.bib
+ : @book{keohane1977
+ :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 712 of file bib.bib
+ : @book{copeland2015
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 720 of file bib.bib
+ : @book{gowa1994
+ :               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 728 of file bib.bib
+ : @book{hirschman1980
+ :                    ,
+I'm skipping whatever remains of this entry
+You've used 49 entries,
+            1876 wiz_defined-function locations,
+            754 strings with 10400 characters,
+and the built_in function-call counts, 11674 in all, are:
+= -- 1230
+> -- 358
+< -- 1
++ -- 145
+- -- 96
+* -- 756
+:= -- 1635
+add.period$ -- 67
+call.type$ -- 49
+change.case$ -- 36
+chr.to.int$ -- 0
+cite$ -- 49
+duplicate$ -- 619
+empty$ -- 1163
+format.name$ -- 96
+if$ -- 2894
+int.to.chr$ -- 0
+int.to.str$ -- 49
+missing$ -- 59
+newline$ -- 168
+num.names$ -- 48
+pop$ -- 149
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 382
+stack$ -- 0
+substring$ -- 718
+swap$ -- 241
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 119
+width$ -- 51
+write$ -- 494
+(There were 12 error messages)

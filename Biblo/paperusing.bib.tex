@@ -1,0 +1,312 @@
+\documentclass[11pt]{article}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage[title]{appendix}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\begin{document}
+	
+	\title{A Longitudinal Network Analysis of Trade Fragmentation: Testing Strategic Decoupling and Connector Stability}
+	\author{Owais Mujtaba /UGR}
+	\date{\today}
+	\maketitle
+	
+	\begin{abstract}
+		Is the return of geopolitical competition indicating the termination of the integrated global economic order? Debates are going on over the measures such as "decoupling" and "friend-shoring" taken by states, but evidence related to such processes that allude towards the fragmentation of global trade network along geopolitical lines remain scarce. This study uses longitudinal network analysis of bilateral trade flows from 2010 to 2024 to measure geoeconomic fragmentation. In this study, we test five hypotheses related to strategic decoupling, connector stability, and network modularity are tested. An intricate "structural rupture" is observed in the trade staistics of G7 and BRICS+ blocs, as  trade between the two blocs has contracted by 21\% since 2010. The global trade network is marked by "inertial integration," since an integrated topological center is emerging amidst declining bilateral ties. However, as shown by community detection algorithms; in the last fifteen years, the year 2024 marks an unprecedented and significant change, where trade clusters seem to arrange along the geopolitical affiliations (ARI = 0.28, p < 0.01).  These findings suggest the collapse of the "flat world," where infrastructure related globalization is governed by logistical path dependency rather than fleeting political orientations. The year 2024 signals the potential "re-binarization" of the international economic order.
+	\end{abstract}
+	
+	\section{Introduction}\label{intro}
+		The international economic order is undergoing a fundamental transformation of its structural foundations. After the Cold War, the leading paradigm in international political economy (IPE) put forward a teleological convergence toward a "flat world". The notion of a "flat world" portrayed a seamless amalgamated global marketplace, where comparative advantage and market efficiency superseded Westphalian anxieties \cite{friedman2005}.  This period of "hyperglobalization" experienced the proliferation of complex global value chains (GVCs) and a network topology characterized by organic, scale-free growth, rather than strategic political design \cite{baldwin2016, barabasi1999}. As per this liberal consensus, geography and politics were considered exogenous frictions destined to yield to declining transaction costs in a maturing rules-based order \cite{rodrik2011, ohmae1990}.
+	
+		There has been a rupture of this consensus. A brand new logic of security has taken its place in the core calculus of international exchange that signal towards the resurgence of the state as the main designer of international economic flows. The stimulus for this change was not a single isolated event, but a collective systemic crisis that included the U.S--China trade war exposing the susceptibility of deep economic integration with a strategic competitor \cite{bown2021}. In addition, the COVID-19 pandemic exposed the brittleness of lean supply chains \cite{gereffi2020} and Russian invasion of Ukraine illustrated the use of economic interdependence as a weapon, when vital security interests of a state are at stake \cite{farrell2019, farrell2023underground}. As a result, there has been a surge in the use of dirigiste industrial policies by states, as seen in the CHIPS Act of the U.S. and the strategic autonomy framework as delineated by the EU. They are fashioned in such a way to give preference to geopolitical interests over commercial dividends \cite{tucker2022}.
+	
+		There seems to be a consensus among scholars and practitioners on the phenomenon of ``geoeconomic fragmentation'' with respect to global supply chains \cite{aiyar2023, gopinath2023}. Despite the rhetorical terms such as ``decoupling'' and ``friend-shoring'' are dominating the current discourse, the empirical analysis of the process continues to be a contentious issue. According to net trade statistics, the commercial ties between the U.S and China have proved to be more resilient than originally considered, leading some to argue that fragmentation remains more a discursive phenomenon than a material one \cite{lovely2022}. Others have come to a conclusion that there has been no decoupling of global economy but a camouflaging of its connections. As trade has  been re-routed through third-party intermediaries such as Vietnam and Mexico, the underlying dependencies, while at the same time have added few layers of opacity to it \cite{freund2023}. Therefore, it gives rise to a fundamental analytical question: is the global trading system genuinely bifurcating structurally into rival blocs or is it simply adapting its routes while maintaining its identity as a singular and integrated topology?
+	
+		Using bilateral trade statistics will not be able to answer this question considering the complexity and adaptiveness of the international economic system. The position of nodes with relation to each other and the fusion of ties have great implications for structural power and systemic stability \cite{jackson2010, schweitzer2009}. Though, traditional gravity models are effective when it comes to prognosticating bilateral trade volumes, but are not well equipped to provide an outlook on changes at the systemic level in community structure or the evolution of latent clusters that represents a fragmenting world \cite{head2014}. It is argued in this paper that if the geo-economic order is fragmenting in reality, it will appear as a change in the network topology, especially there will be a shift of globally integrated core to modular structure that is defined by a high intra-bloc density and lower inter-bloc connectivity.
+	
+		This study contributes and to the already discussed emerging literature by developing an extensive network-based framework that measures and characterizes geoeconomic fragmentation in the contemporary international system. Detailed bilateral trade data, disaggregated by product category, have been used to build time-varying network representations of the global economy. The data from 2010 to 2024 cover both the late hyperglobalization era and the recent phase of deepened geopolitical competition. Here, it is evaluated whether and how the structure of international trade has unfolded into bloc-like configurations.
+	
+		The remainder of this article proceeds as follows. Section~\ref{sec:theory} details our network-based methodology and data sources. Section~\ref{sec:results} presents the empirical results of our community detection analysis.  We conclude in Section~\ref{sec:conclusion} by discussing the long-term prospects for the international economic order.
+	
+	
+	\section{Theoretical Framework}\label{sec:theory}
+		The question related to the so-called fragmentation of the international economic order into competitive blocs is at the center of the discussion related to economic interdependence, geoeconomic statecraft, and network structure formed by states. An analytical framework that integrates these discussion to obtain testable hypotheses regarding the evolution of the global trade network.
+	
+		\subsection{Economic Interdependence and Fragmentation}
+			The theory of liberal interdependence views dense commercial networks as incentives for profit that promote cooperation among states by increasing the opportunity costs of conflict \cite{keohane1977, milner1988}. Liberals consider trade as the source of generating domestic constituencies that support market access and provide states the opportunity to gain efficiency in production via specialization. Also, it helps states improve trust between them by repeatedly interacting with each other and reduces the chances of conflict or disputes \cite{keohane1984, hirschman1980}.
+	
+			Realists, in contrast, view asymmetric dependencies as mutual constraint owing to its negative consequences, such as creation of vulnerabilities and leverages \cite{waltz1979, grieco1988}. In order to extract concessions, a state can threaten or create disruption, in case another state depends more on it or vice versa. Moreover, security imperatives most of the time outpace the economic considerations, in case vital interests of a state are at stake \cite{mearsheimer2001}.
+	
+			\cite{copeland2015} tries to attempt to pacify these two extreme views through the trade expectations theory, which states that interdependence among countries in the economic sphere promotes peace when states anticipate continued access. However, at the same time,there is an increased chance of conflict when states, when states expect cutoff of supply chain. For the contemporary debate about fragmentation, this analysis is non trivial. The increase in the intensity of great power rivalry can lead states to stability of supply chains and motivate them to make anticipatory adjustments. Initiatives such as diversification of supply chains, preventive curtailments, and decreased relationship-specific outlays could give rise to self-actualizing prophecy, where assumptions od decoupling give rise to overtures that cause it \cite{farrell2023innovation}.
+	
+	\subsection{Weaponized Interdependence and Strategic Responses}
+	
+		\cite{farrell2019} is of the view that the exceptional clustering of  global financial and informational framework networks gives hub-dominating states unreasonable coercive power in two ways. One among them is the \textit{panopticon effect}, that is the surveillance of global flows through centralized nodes such as SWIFT and infrastructure related to telecommunication. Another is the \textit{chokepoint effect}, that empowers a state to single-handedly and without the imprimatur of international law, control crucial hubs and deny adversaries the participation in various economic domains.
+		
+		This framework helps to understand the reasons behind the pursuit of autonomy in infrastructure, as seen in parallel payment systems established by states such as China and Russia (Russia's Mir, China's CIPS), and alternative internet governance; despite low efficiency \cite{skalamera2023}. Weaponized interdependence can be self-constrainting, if critically looked at. Each use of economic coercion brings to the fore various vulnerabilities and encourages states to reduce their dependencies, hence fragmenting supply networks even at the cost of reducing the efficiency of the entire system \cite{farrell2023innovation}.
+		
+		These dynamics were further triggered by the COVID-19 pandemic, when supply chains proved to be inept in dealing with crises caused by shortages related to personal protective equipment, semiconductors, and vaccines \cite{gereffi2020}. \cite{farrell2021} classifies them as "catastrophically" failed systems, firmly coupled and optimized supply chains were made vulnerable to interrelated shocks. The acquaintance during the pandemic stepped-up the re-appraisal of efficiency-resilience trade-offs that conceivably change the priorities of governments and firms, alike, towards resilience despite efficiency considerations \cite{miroudot2020}.
+	
+	\subsection{Network Structure and Geopolitical Modularity}
+	
+		According to the perspective provided by Network Analysis, the connection patterns, in their entirety taking into account the trading partners of countries and the involved intermediaries; possess independent causal importance beyond bilateral relationships \cite{jackson2010}. The network system concludes that subjection to shocks and propagation pathways gives various forms of power via position, which in turn structure strategic feasibility \cite{acemoglu2012, borgatti2009}.
+		
+		The extent to which a network divides into communities having thick internal and sparse external linkages, termed \textit{Network modularity}, directly measures fragmentation \cite{newman2006}. Modularity can arise from geographic proximity, cultural similarity, or preferential agreements \cite{head2014, rauch2001, baier2007}. In addition, it can arise from conscious restructuring of politics via differential tariffs on partners and competitors, discriminatory restrictions on investment, blanket bans on technology transfers, and organized \cite{garcia2023}
+		
+		Multiple mechanisms could increase modularity in instances where geopolitical tensions increase. Strategic competition between states motivates them to build blocs, so to increase relative capabilities while at the same time decreasing vulnerabilities \cite{gowa1994}. Taking into account that trade tensions give rise to protectionist tendencies {milner1988, lake2009}. The increased possibility of conflict, in turn, increases the option value of diversification and reduction of investment in relationship-specific ties with potential competitors \cite{handley2020}.
+		
+		Moreover, there exist some counterbalancing forces in the form of multinational firms having cross border investment that oppose fragmentation by lobbying against imposed choices \cite{brooks2005}. In addition, several states benefit by exploiting the brokerage opportunities between rival states or factions \cite{kinne2018} and by creating adjustment costs through locking in of sunk investment \cite{chaney2014}. Also, fragmentation is opposed by specialized global value chains that are hard to modify \cite{baldwin2016}.
+		
+		In the event if politically motivated fragmentation is occurring in reality, we should witness: (1) a rise in modularity after geopolitical shocks; (2) orientation of bloc structure towards along political lines as opposed to economic factors: (3) a dip in inter-bloc trade as opposed to intra-bloc economic connections; (4) an enhanced stature of bridging economies; (5) differential patterns across various sectors, with strategic goods fragmenting more than the commodities.
+	
+	\subsection{Structural Position and Systemic Stability}
+	
+		In the economic structure, especially in the supply chains, different countries take specific structural positions that bestow them with a mix of advantages and vulnerabilities. The \textit{Betweenness centrality} of the states' interconnectedness identifies important intermediaries that are located on the shortest paths between others \cite{freeman1977}. In fragmenting systems  high-betweenness states take  strategic positions—"consensus connectors" or "bridge nations" between rival blocs such as Singapore, UAE, or Turkey \cite{gould1989, kinne2018}. These connector states maintain ties with multiple blocs, thereby preserving overall connectivity amid a decrease in the exchanges between rival states. the stability of brigde position becomes important such as in case a state is coerced to ally. In such cases, the supply chain structure completely fragment than in the case of the persistence of a state towards neutrality \cite{Joyce2013}.
+		
+		\textit{Global efficiency} also matters, as it provides a comprehensive performance measurement of the average length of the inverse shortest path between all pairs of nodes \cite{latora2001}. High efficiency implies that states have fewer options when it comes to intermediaries, and low efficiency needs many indirect steps. It is important to note that efficiency can hit a nadir even in the event of stable connectivity in case of the removal of key bridges, forcing states to adopt longer trade routes. 
+		
+		If we go by temporal trends, the fragility of a system represents the vulnerability of networks. The removal of a fixed number of connector states has an increasingly significant effect on the efficiency of world trade over time. This points towards a growing fragility of flows and the reliance of the supply chain system on few important connections for its stability  \cite{schneider2011}. Conversely, the decreasing impact demonstrates either an excess superfluity or a case of total fragmentation where connectors does not matter.  
+	
+	\subsection{Decoupling versus Re-routing}
+	
+		An important difference between \textit{decoupling} and
+		\textit{re-routing} is that the former is about a total reduction in the trade transactions between states or blocs, whereas the latter is about maintaining connectivity via various intermediaries. Complete decoupling eliminates the benefit of avoiding war in absence of comparative advantage and mutual dependencies \cite{keohane1984}. In the phenomenon of re-routing, efficiency is preserved as the connector states act as facilitators of the exchange, but with a comparative increase in transaction costs and evasion opportunities \cite{freund2023}.
+	
+		The two phenomena have different topological characteristics. Although decoupling implies a decrease in inter-bloc edge weights, hence increasing geodesic distances between rival states along with declining network denseness. Re-routing clearly provides an overall steadiness in density despite diminishing bilateral relations, increases intermediary betweenness, elongates trade paths between competitors while preserving connectednerss, and creates bridge nodes \cite{freeman1977}. The mechanisms related to the phenomenon of re-routing include transshipment via connector third countries in order to hide its origin \cite{lovely2022}, relocation of final assembly of FDI while conserving supply links \cite{antras2020}, emergence of connector third-party countries working as links between rival states \cite{rauch2001}, and rebuilding product designs to overcome country-specific bans \cite{bown2022}.
+		
+		In case if fragmentation represents re-routing as compared to decoupling, then: (1) estimated welfare cost in accordance with bilateral trade fluctuations overemphasize real losses; (2) assessments related to strategic vulnerabilities in accordance with direct dependencies overlook indirect exposure; (3) the policies related to dependency-reduction are rendered ineffective as other alternative paths emerge; (4) conflict-constraining effecs of interdependence continue to exist even amid surface fragmentation. 
+	
+	
+	\subsection{Hypothesis}
+		We formalize five core hypotheses testing structural dynamics of the emerging multipolar order:
+		
+		\textbf{H1: G7--BRICS Strategic Decoupling.} We quantify the trade relationship between G7 and BRICS+ blocs using bilateral export data (2010--2024). The G7--BRICS+ trade share is defined as:
+		\begin{equation}
+			S_t = \frac{X_t^{\text{G7--BRICS+}}}{X_t^{\text{Total}}} = \frac{\sum_{i \in \mathcal{G}} \sum_{j \in \mathcal{B}} X_{i,j,t} + \sum_{i \in \mathcal{B}} \sum_{j \in \mathcal{G}} X_{i,j,t}}{\sum_{i} \sum_{j} X_{i,j,t}}
+		\end{equation}
+		where $X_{i,j,t}$ denotes the export value from reporter $i$ to partner $j$ in year $t$. We test for monotonic trends using the Mann-Kendall test and estimate the rate of change via Sen's slope.
+		
+		\textbf{H2: Consensus Connector Stability.} We model the international trade system as directed graphs $G_t = (V, E_t)$ with 192 economies. Structural influence is measured through weighted betweenness centrality using log-normalized distance: $d_{ij} = 1/\ln(w_{ij} + 1)$. For each node $v$, we calculate a Stability Index:
+		\begin{equation}
+			S_i = 1 - \frac{\sigma_{BC}}{\mu_{BC}}
+		\end{equation}
+		where values near 1.0 indicate invariant structural position. Statistical significance is determined against a degree-preserving null model (1,000 iterations) at $P < 0.05$.
+		
+		\textbf{H3: Network Modularity and Bloc Fragmentation.} We quantify fragmentation using the Newman-Girvan modularity index for G7 and BRICS+ clusters:
+		\begin{equation}
+			Q_t = \frac{1}{2m_t} \sum_{i,j} \left( A_{ij}^t - \frac{k_i^t k_j^t}{2m_t} \right) \delta(c_i, c_j)
+		\end{equation}
+		where $A_{ij}^t$ is trade weight, $k$ represents node strength, $m_t$ is total network volume, and $\delta(c_i, c_j)$ indicates same-bloc membership. Increasing $Q_t$ signifies systemic fragmentation.
+		
+		\textbf{H4: Endogenous Geopolitical Community Alignment.} We employ the Leiden algorithm to detect community structures in log-transformed trade networks. The alignment between detected communities and predefined blocs (G7 vs. BRICS+) is measured using the Adjusted Rand Index (ARI). Statistical robustness was validated using a Monte Carlo permutation test ($n=200$). By shuffling the membership labels of the 16 core nations, we established a null distribution and derived Z-scores: $Z = (ARI_{obs} - \mu_{null}) / \sigma_{null}$, where $Z > 1.96$ denotes significance at the 95\% confidence interval.
+		
+		\textbf{H5: Increasing Systemic Fragility.} We identify critical connector countries ($\mathcal{C}_t$) as the top five neutral intermediaries by weighted betweenness centrality. Systemic fragility is quantified via a Resilience Loss Index based on global efficiency:
+		\begin{equation}
+			E_t(\mathcal{G}_t) = \frac{1}{N(N-1)} \sum_{i \neq j} \frac{1}{d_{ij}}, \quad \text{RLI}_t = 1 - \frac{E_t(\mathcal{G}_t \setminus \mathcal{C}_t)}{E_t(\mathcal{G}_t)}
+		\end{equation}
+		We test for increasing fragility by comparing observed RLI trends against random node removal via Z-scores: $Z_t = (\text{RLI}_t - \mu_{\text{rand}})/\sigma_{\text{rand}}$.
+		
+	
+	\subsection{Data} \label{sec:data}
+		
+		We analyze bilateral merchandise trade flows from trade data taken from the World Integrated Trade Solution (WITS) platform, which procures data from the United Nations Commodity Trade Statistics Database (UN Comtrade).  The data set covers years 2010-2024, thus providing a broad panel of yearly trade flows between reported countries and their trading partners. The fifteen-year window takes into consideration the non-trivial periods of geopolitical turmoil that include the U.S.-China trade war, Brexit, the COVID-19 pandemic, and Russia's invasion of Ukraine.
+		
+		
+		
+		Table~\ref{tab:descriptive_stats} presents elucidative statistics that account for the evolution of sample coverage and global trade volumes. The number of reporting countries ranges from 126 to 175, while the partner countries remain relatively stable at approximately 239. As for total observations per year, they range from 42,582 to 53,472 that reflect change in reporting completeness. 
+		
+		\begin{table}[htbp]
+			\centering
+			\caption{Descriptive Statistics: Global Trade Network Coverage, 2010--2024}
+			\label{tab:descriptive_stats}
+			\small
+			\begin{tabular}{ccccc}
+				\toprule
+				Year & Reporting & Partner & Global Trade Volume & Observations \\
+				& Countries & Countries & (Billion USD) & \\
+				\midrule
+				2010 & 147 & 236 & 32,206.02 & 45,252 \\
+				2011 & 153 & 239 & 39,008.19 & 46,616 \\
+				2012 & 155 & 238 & 38,874.89 & 47,456 \\
+				2013 & 160 & 239 & 40,000.02 & 49,454 \\
+				2014 & 165 & 238 & 39,959.35 & 49,928 \\
+				2015 & 171 & 239 & 34,986.36 & 51,712 \\
+				2016 & 172 & 239 & 34,058.47 & 52,633 \\
+				2017 & 175 & 239 & 38,366.97 & 53,472 \\
+				2018 & 174 & 239 & 42,166.28 & 53,351 \\
+				2019 & 171 & 239 & 41,177.05 & 53,364 \\
+				2020 & 168 & 239 & 38,083.09 & 51,711 \\
+				2021 & 170 & 239 & 48,067.80 & 53,462 \\
+				2022 & 166 & 239 & 53,310.58 & 52,324 \\
+				2023 & 164 & 238 & 50,412.56 & 51,786 \\
+				2024 & 126 & 239 & 48,508.06 & 42,582 \\
+				\bottomrule
+			\end{tabular}
+		
+		\end{table}
+		
+		In this research, G7 and BRICS+ are taken as twon geopolitical blocs. G7 comprises Canada, France, Germany, Italy, Japan, the United Kingdom and the United States, while as BRICS+ includes Brazil, Russia, India, China, South Africa, plus recent additions that include Iran, UAE, Egypt and Ethiopia; where data are available. Those countries, not associated with any of the blocs are classified as neutral or non-aligned. This enables the identification of the states that are playing the role of consensus connectors.
+		
+		The data and code used in the accomplishment of the research objectives are publicly available to support reproducibility and transparency. All scripts for data preprocessing, model training, and evaluation are provided in a public GitHub repository \cite{FragmentationDynamics_GitHub}, while data sources are obtained from the publicly accessible platform WITS \cite{WITS_WorldBank}.	
+	
+	\section{Results and Discussion}\label{sec:results}
+	
+		\subsection{The Decline of G7--BRICS+ Trade Interdependence}
+			The amount of trade between the G7 and BRICS+ blocs has reduced over this observed fifteen-year period to a large extent. Our analysis gives information about the total  share of G7--BRICS+ trade in relation to the total global trade statistics ($S_t$). The G7--BRICS+ trade has decreased from 6.1\% in 2010 to 4.8\% in 2024 that is a 21\% reduction in inter-bloc economic integration. Log-linear regression analysis confirms that this trend is both statistically significant as well as economically meaningful. Since the trade share shows an annual proportional decline of approximately 1.8\% (coefficient $\beta = -0.0177$, $p<0.001$) which represents a constant deterioration of the economic foundations that previously bound these competing geopolitical blocs on the two sides of the aisle (Table~\ref{tab:trend}).
+			
+			The moment of decline in trade relations between G7 and BRICS+ is strikingly important. The analysis compares trade patterns before 2018 and after 2018, showing a structural hiatus in trade that coincides with the emergence of U.S.-China trade tensions and the ensuing geopolitical confrontations. The average trade share after 2018 is much lower than the baseline before 2018 ($\Delta S = -0.72$ percentage points, $p=0.0006$), with bootstrap confidence intervals conclusively excluding zero $[-0.98, -0.48]$. Contrary to facts, estimates based on the pre-2018 trajectory put forward that the perceived trade share of 2024 is cumulatively 1.67 percent lower than the expected levels that quantify the economic toll of steps taken  by states to decouple. 
+			
+			Moreover, after 2018, trade flows have shown considerably higher volatility, with the variance increasing by a factor of 3.60 compared to the period that preceded it. This higher instability indicates an increasing effect on non-economic factors on economic decision-making that include sanctions, export controls, and worries related to supply chain security. Placebo testing that used 2014 as the year of pseudo-intervention produces a little impact  ($\Delta S = -0.61$percentage points). This confirms the distinctive relation of structural transformation with post-2018 geo-political happenings as opposed to secular trends. The trend of five-year estimates further discovers a speeding up of negative momentum after 2018, emphasizing the latest intensification in economic fragmentation (Fig.~\ref{fig:G7_BRICS})
+			
+			\begin{figure}[ht]
+				\centering
+				\includegraphics[width=\textwidth]{G7_BRICS_Decoupling_Figure.pdf}
+				\caption{\textbf{Declining G7--BRICS+ Trade Integration, 2010--2024.} 
+					Panel (a) represents the change in the G7--BRICS+ trade share ($S_t$) as a percentage of global trade. The trend line and key geopolitical events expounded are 2018 trade war initiation and 2022 Ukraine invasion. Panel (b) projects the directional trade flows in billions of USD while distinguishing between G7 exports to BRICS+ and BRICS+ exports to G7. The shaded area highlights the time period after 2018 that represents the speeding up of decoupling dynamics.}
+				\label{fig:G7_BRICS}
+			\end{figure}
+			
+			\begin{table}[ht]
+				\centering
+				\caption{Temporal Trend in G7--BRICS+ Trade Share: Log-Linear Regression Results}
+				\begin{tabular}{lcccc}
+					\hline
+					Variable & Coefficient & Std. Error & t-value & p-value \\
+					\hline
+					Intercept & 32.7481 & 3.384 & 9.676 & $<0.001$ \\
+					Year      & $-0.0177$ & 0.002 & $-10.536$ & $<0.001$ \\
+					\hline
+				\end{tabular}
+				\label{tab:trend}
+				\vspace{0.2cm}
+				
+				\footnotesize{\textit{Note:} The negative year coefficient shows a continuous year-by-year decline in the proportion of trade share between G7 and BRICS+ economies. The results are based on annual data from 2010--2024 ($N=15$).}
+			\end{table}
+	
+		\subsection{The Persistence of Strategic Trade Intermediaries}	
+			The total trade between major power blocs has diminished, however, a stable set of intermediary states are securing the framework of global economic linkages. Network centrality analysis measures the role of each country as a bridge connecting states, allowing disconnected states to trade with each other. It displays a highly arranged hierarchy that is dominated by what we term the ``Stability Triad''. Three actors that include the United States, China, and France, invariably maintain a high brokerage position throughout the studied years. The mean betweenness centrality scores of more than 0.025 are recorded with extraordinary consistency in the system over time (Table~\ref{tab:stability}).
+			
+			The United States displays the most invariant structural position ($S_i = 0.92$) that presents it as a  long-lasting actor and the primary coordinate of transatlantic and transpacific trade. China, while maintaining dominant influence ($S_i = 0.78$), shows higher volatility and a pattern accordant with the current reconfiguration of supply chains in Asia amid containment strategies of Washington and dual circulation policy of Beijing. The emergence of France  as a stability anchor ($S_i = 0.77$), as the consistent intermediary role it plays surpasses Germany ($S_i = 0.74$) by a slight margin during the same period. This shows the significance of institutional positioning within the European Union and historical Francophone trade networks.
+			
+			This analysis recognizes  a class of ``stabilizing bridges'' besides the major powers, which are mid-tier economies showcasing an outstanding  structural consistency, though lacking in economic front in comparison to the great powers. The Netherlands ($S_i = 0.80$) and Spain ($S_i = 0.83$) exemplify this pattern, functioning as logistical gatekeepers by playing connector roles, marked by impressive stability through fleeting geopolitical alignments. As per the findings, some forms of commercial infrastructure, such as amenities related to ports, financial clearing mechanisms, and other related frameworks that give rise to path dependencies, protect specific nodes from political turmoil. 
+			
+			Also, the other way around, we observe a ``structural endpoint paradox'' in the newly appearing manufacturing centers. Notwithstanding the considerable increases in gross export volumes, countries such as Vietnam ($S_i = -0.66$) and Mexico ($S_i = 0.33$) show low or even negative stability scores  and a near-zero brokerage centrality ($BC < 0.0004$). These states primarily act as manufacturing centres within supply chains managed by established powers as opposed to independent intermediaries connecting diverse trading partners. The pattern unveils the drawbacks of export-led development strategies in bestowing systemic influence, since quantity alone does not always get transformed into a structural centrality.
+			
+			\begin{table}[h!]
+				\centering
+				\caption{Structural Stability of Key Trade Intermediaries, 2010--2024}
+				\label{tab:stability}
+				\begin{tabular}{lcccc}
+					\toprule
+					\textbf{Country} & \textbf{Bloc} & \textbf{Mean Centrality} & \textbf{Stability Index} & \textbf{Significance} \\ 
+					\midrule
+					USA & G7 & 0.121 & 0.923 & $p<0.001$ \\
+					China & BRICS+ & 0.116 & 0.780 & $p<0.001$ \\
+					France & G7 & 0.029 & 0.769 & $p<0.001$ \\
+					Germany & G7 & 0.022 & 0.740 & $p<0.001$ \\
+					Netherlands & Strategic & 0.014 & 0.805 & $p<0.05$ \\
+					Russia & BRICS+ & 0.003 & 0.376 & $p=0.421$ \\
+					Mexico & Strategic & 0.0001 & 0.335 & $p=0.612$ \\
+					Vietnam & Strategic & 0.0004 & $-0.658$ & $p=0.892$ \\ 
+					\bottomrule
+				\end{tabular}
+				\vspace{0.2cm}
+				
+				\footnotesize{\textit{Note:} Mean centrality measures each country's average brokerage position across all years. Stability index calculates consistency of a measurement or system over time, with higher values specifying invariant structural roles. P-values test whether the perceived stability differs significantly from arbitary network configurations. Strategic countries are prime manufacturing hubs outside the G7 and BRICS+ blocs.}
+			\end{table}
+			
+			Statistical validation defined by the standards for accuracy, precision, and reliability against network configurations validates the fact that the stability of the influential triad is non-random ($p < 0.001$). In comparison, the intermediary role played by volatile connectors such as Russia ($S_i = 0.38$, $p = 0.42$) and the UAE ($S_i = 0.51$) are  statistically unperceivable from chance fluctuations. The proof indicates that the international trade dividend still continues to remain hooked in long-standing logistical geography and institutional capacity, as opposed to the indication of fleeting manufacturing booms or an increase in commodity exports. This can have huge implications for the theory of international relations, as structural power in the global economy seems to be more resilient to rapid redistribution than indicated by material capabilities.
+		
+		
+		\subsection{The Absence of Network Fragmentation}	
+			\begin{figure}[ht]
+				\centering
+				\includegraphics[width=\textwidth]{H3_Modularity.pdf}
+				\caption{\textbf{Absence of Structural Fragmentation in Global Trade, 2010--2024.} 
+					The evolution of network modularity ($Q$) measures the extent to which G7 and BRICS+ blocs form distinguishable trading communities. If positive values are obtained, it indicates the fragmentation of states into disparate economic spheres. While as, negative values suggest preferential trade across blocs. The persistent negative modularity reveals that G7 and BRICS+ economies remain structurally inseparable inspite of diminishing bilateral trade volumes.}
+				\label{fig:H3}
+			\end{figure}
+		
+			An important question that arises from our analysis is that notwithstanding the clear proof of the downward trend in bilateral trade between blocs,  The international trading system has not divided into distinct regional blocs. This finding needs to categorically reject the fragmentation hypothesis (H3). During the period extending from 2010--2024, the global trade failed to show an increase in modularity that could mark the decoupling of states into different economic blocs. The Mann-Kendall trend test validates the absence of any perceivable fragmentation ($p = 0.075$) by maintaining modularity numbers close to zero or negative ($-0.015 > Q > -0.031$) throughout the studied time period (Fig.~\ref{fig:H3}).
+			
+			
+			
+			Negative modularity in network analysis substantiates a ``disassortative'' arrangement in which nodes alternately meet across group peripheries rather than within them. When it is applied to our context, this implies that the economies of G7 and BRICS+ maintain dense connections across blocs amid a dip in total trade volumes. It is explained by the functional necessity of few bilateral relationships such as Germany depends on Chinese rare earths, China itself hinges on Dutch for equipment related to semiconductors, the U.S. banks on Indian imports for its requirement of pharmaceutical ingredients. The dependencies discussed above indicate profound complementarities in manufacturing capabilities that cannot be reconfigured by knee-jerk reactions, even when possessing political will.
+			
+			The 2020 COVID-19 pandemic proves to  be natural experiment, as during the pandemic, most of the supply chains felt stressed. The modularity passed its most negative value ($Q = -0.031$), specifying that the crisis in reality escalated dependence on cross-bloc partnerships. As existential dangers to the continuity of manufacturing arise, states reneged by making use of existing interdependencies, as opposed to a retreat into regional autarchy. In a similar vein, neither the trade war of 2018 and nor the Russian invasion of Ukraine in 2022 gave rise to a change towards positive modularity that indicates a successful bloc formation.
+			
+			This particular condition is characterized by ``inertial integration'', a situation in which the topological core of the world economy keeps itself unified, even though policy rhetoric and minor adjustments suggest decoupling. The absence of fragmentation does not point towards harmony and trust among blocs, rather it implies the prohibitive costs of cutting deep embedded manufacturing networks. Present initiatives taken  by states include ``friend-shoring'' and ``de-risking'' operate at the fringes of the network; redirecting minor flows, without drastically restructuring the core design of the supply chain network. This structural stagnation points towards the fact that the infrastructure of economic globalization is governed more by logistical considerations instead of fleeting geopolitical orientation. However, this raises important questions regarding the feasibility of strategic decoupling without any huge disruption.	
+	
+		\subsection{The Emergence of Geopolitical Bloc Formation}
+			As global supply chains do not show any fragmentation into two or several networks, recent evidence points towards the appearance of realignment of trade patterns along geopolitical orientations. The identification of densely connected clusters formed by trading states, without any initial assumption about bloc membership through community detection algorithms, uncovers that in 2024 a fundamental regime shift started (Fig.~\ref{fig:trade_alignment}).
+			
+			\begin{figure}[ht]
+				\centering
+				\includegraphics[width=\textwidth]{trade_alignment_ari_zscore.pdf}
+				\caption{\textbf{Geopolitical Realignment of Global Trade Patterns, 2010--2024.} 
+					The Adjusted Rand Index (ARI) measures the correlation between algorithmically identified trade groups and predetermined geopolitical blocs (G7 versus BRICS+). Higher values give an indication that trade exchange increasingly organize itself as per the political inclinations. The Z-score calculates the statistical significance in relation to disorganized trade patterns. An acute increase in 2024 unravel an unprecendented deviation from the ``bloc-blind'' exchange that characterized previous decades.}
+				\label{fig:trade_alignment}
+			\end{figure}
+			
+			From 2010 to 2023, the coalition between the identified trade groups and members of the formal bloc was reported as low and  statistically insignificant ($\text{ARI} < 0.15$). During this ``bloc-blind'' duration, trade cooperations were mainly led by economic complementarities and relative edge in the form of profit, as compared to strategic inclinations. We observed that German businesses traded with Chinese partners, American companies outsourced to Vietnamese firms, and in a similar vein, French  to Brazil. This alludes towards little or no regard for geopolitical competition. Identification with G7 and BRICS+ held little meaning when it came to predicting actual patterns of commercial activities and interchange.
+			
+			This collaborative baseline experienced structural collapse in 2024. The alignment index leaped to $\text{ARI} = 0.28$ with a very high significant Z-score of $3.06$ ($p < 0.01$). This alludes towards the fact that trading states now increasingly relate themselves closely with the like-minded members of a geopolitical bloc than as compared to any instance belonging to the previous fourteen years. This change points towards a rapid ``re-binarization'' of international economic exchanges, wherein the probability of intra-bloc exchange has remarkably come to override inter-bloc trade as opposed  to what basics related to economics alone would predict.
+			
+			The processes that possibly give rise to this change include the extension of BRICS in 2023 to include crucial economies such as Saudi Arabia, the UAE, Egypt, and Iran in order to generate a relatively congruent and self-sustained trading platform. Besides, G7 countries have used ``de-risking'' strategies such as the U.S. CHIPS Act, the European Critical Raw Materials Act, and a concerted effort on export controls on high-end technologies. This has encouraged companies to prefer and prioritize like-minded coalition partners. The accretive effect is the crystallization of a bipolar trade topology that recalls Cold War economic blocs and marks a likely end to the post-1991 era of hyperglobalization.
+			
+			It is important to note that this geopolitical realignment (increasing ARI) exists along with tenacious structural integration that is negative modularity. The apparent contradiction resolves when we recognize that these metrics capture different dimensions of network organization. Modularity, as we know guages whether the network patterns can neatly be divided into disparate parts. A system can show low modularity by keeping itself topologically unified while demonstrating high ARI, with present linkages deeply concentrated within blocs. The contemporary arrangement indicates a trading scheme that keeps itself functionally well connected at the systemic level while experiencing considerable realignment at the level of bilateral cooperation.
+		
+		\subsection{The Evolution of Systemic Vulnerability}
+			The vulnerability of the global trade network to cascading disturbance follows a highly complicated trajectory over the past fifteen year period. This provides the necessary support for the systemic fragility hypothesis (H5). Our analysis unravels two separate phases. One among them is the protracted dration of growing suceptibility that is followed by another phase of a recent rectification that alludes towards the crucial restructuring. 
+		
+			\begin{figure}[ht]
+				\centering
+				\includegraphics[width=\textwidth]{RLI_ZScore.pdf}
+				\caption{\textbf{Temporal Evolution of Systemic Vulnerability in Global Trade, 2010--2024.} 
+					The Resilience Loss Index (RLI) measures the interruption across the networks produced by the removal of the most important connector states. If we obtain higher values, they denote a greater systemic fragility. The Z-score evaluates whether the recorded vulnerability diverge significantly from the random withdrawl of node. The consistent soaring of RLI throughout the year 2023 indicates an increase in the amount of trade exchanges via crucial bottlenecks, while a dip in 2024 alludes to an incipient efforts at diversification by states.}
+				\label{fig:RLI}
+			\end{figure}
+		
+			The Resilience Loss Index measures the percentage share of the global connectivity that is lost in the event that the five most prominent intermediary states are eliminated from the network. The RLI has continuously grown from 0.081 to a peak of 0.096 in the years beginning from 2010 until 2023. This 18.5\% increase shows that the global trading system has gradually become more dependent on a restricted set of structural bottlenecks. The trend is in good agreement with the ``efficiency-over-resilience'' paradigm that governed the management of supply chains during this period. Throughout these years, the multinational companies concentrated their production and logistics through enhanced hubs in order to bring down transaction costs and maximize just-in-time delivery.
+		
+			However, the statistical significance of the convergence gives a subtle visualization. Throughout the maximum period studied, the Z-scores vary within the interval $[-1.0, 1.0]$. This denotes a loss in observed resilience as the top connectors are removed was not  significantly greater as compared to that of randomly taking away the set of five strategically positioned nations from the ``Other'' category that include Syria, Singapore, Turkey, Vietnam, and Mexico (Fig.~\ref{fig:RLI}). This result hints at the systemic fragility as not localized in a few small ``super-connectors,'' but being a diffuse characteristic of a whole class of neutral connectors. The implication for the global system is paramount as it may become vulnerable to interruption anywhere within this collective layer, as oposed to any distinct high-profile nodes.
+		
+			The recent turnaround of this trend is arguably significant. In 2024, there was a dip in RLI, as it hit to 0.089 that represented the first significant decrease over a dacade. This change potentially mirrors the incipient effect of the efforts to drive diversification of supply chains amid disruptions caused by pandemic and geopolitical tensions. The major economies have gone with the implementation of ``China Plus One'' strategies, development of alternative sourcing patterns, and the investment in increasing the capacity of domestic production. The economic exchange network seems to be undergoing a crucial recoupling. Such diversification has the potential to increase transaction costs and decrease total effiency, but at the same time it potentially improves the resilience by dispensing the vulnerabilities across different pathways.
+		
+			The wider theoretical consequences are related to the relationship between economic efficiency and political security in times of strategic rivalry. During the timeline starting from 2010 and ending in 2023, the course taken by the global economy illustrates that market forces solely tend toward concentration and the aggregation of vulnerabilities, while at the same time companies enhance the cost minimization without the internalization of systemic risks. The inflection point of 2024 suggests that the medlling of state governments through industrial policies, export controls, and securitization of supply chain; can counterbalance these proclivities, nevertheless at the economic cost. The question now arises as to whether this correction speaks for a short-term change or the initiation of a steady restructuring towards a relatively resilient, though less efficient, global trading system. This open question can have intense implications for the future of economic interdependence between states.
+		
+	\section{Conclusion}\label{sec:conclusion}	
+			The structural underpinnings of the international economic order have reached a consequential inflection point. This study has moved beyond the bilateral trade statistics of states and analyzed the topological evolution of international trade. The research focuses on the time period starting from the peak of hyperglobalization to the current time, which is marked by an intense geopolitical rivalry. Our findings put forward three main contributions to the scholarship on International Political Economy and structural power.
+		
+		First of all, we designate a condition of "inertial integration." Notwithstanding the amplification in the number of dirigiste industrial policies and the  "weaponization" of interdependence by major powers, the network of international economic exchange has demonstrated an exceptional resistance to modular fragmentation. The tenacious negative modularity calculated results throughout the study duration ranging from 2010 to 2024 show the functional indispensibility of ties across the border are propelled by deep complementarities. The exchange of rare earth minerals, semiconductors, and pharmaceuticals between states exceeds the political will of decoupling. This hints at the "gravity" of established logistical and prolific networks that create a stabilizing ground for preventing a fast descend into fragmented or islolated regional autarchies.
+		
+		Secondly, our analysis of the "Stability Triad" formed by the United States, China and France, and the "stabilizing bridges" formed by the Netherlands and Spain; uncovers that the structural power of the global economy is more resilient than as suggested by material capabilities. Despite a dramatic increase in the amount of trade by manufacturing hubs such as Vietnam and Mexico, these states largely remain "structural endpoints" as opposed to autonomous intermediaries. This validates the point that systemic influence is rooted in institutional capacity and logistical geography. It is very difficult to reproduce or byepass through short-term "friend-shoring" initiatives.
+		
+		Lastly, the data from 2024 allude towards a possible "structural rupture." The sharp rise in the coalition between algorithmically identified trade communities and geopolitical blocs, calculated through the Adjusted Rand Index, suggests that the "bloc-blind" commerce of the post-Cold War era is coming to an end. Also, at the same time, there is the first considerable decrease in the Resilience Loss Index (RLI) in more than a decade. It indicates that the case of quid pro quo has been resolved in favor of the latter. As states internalize systemic risks through strategies such as "China Plus One" and industrial interventions, the trade network is going through a fundamental rewiring. 
+		
+		The future of the international economic order is likely to be defined by the tension between the structural stagnation of deeply rooted suply chains and the "re-binarization" of trade Agglomerates. As the global system becomes more resilient by disseminating vulnerabilities across multiple pathways, it does it at the cost of the efficiency gains, that were the defining feature of the last three decades. Whether this transformation leads towards a consistent bipolarity or a more fragmented, high-friction world depends on the ongoing role of non-partisan "bridge nations" in maintaining the attenuating threads of  cross-bloc connectivity.
+		
+		
+	\section*{Declarations}
+			\begin{itemize}
+				\item Funding: None
+				\item Data availability: Yes
+				\item Code availability: Yes
+			\end{itemize}
+		
+	
+	\section{Conclusion}\label{sec:conclusion}
+		Our analysis suggests that while bilateral volumes between rival blocs are shrinking (decoupling), the topological core of the world remains integrated through "inertial integration" and strategic intermediaries.
+	
+	\bibliographystyle{ieeetr}
+	\bibliography{bib}
+	
+\end{document}
