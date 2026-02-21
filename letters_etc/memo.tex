@@ -1,0 +1,68 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}       
+\usepackage{xcolor}         
+\usepackage{booktabs}       
+\usepackage{hyperref}       
+
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+\newcommand{\memoline}[2]{\textbf{#1:} & #2 \\}
+
+\begin{document}
+	
+	% --- Memo Header ---
+	\begin{flushleft}
+		\LARGE \textbf{\textcolor{blue}{MEMORANDUM}} \\
+		\rule{\textwidth}{1pt} \\
+		\vspace{0.2cm}
+		\large
+		\begin{tabular}{ll}
+			\memoline{TO}{Strategic Research Division}
+			\memoline{FROM}{Lead Quantitative Analyst}
+			\memoline{DATE}{\today}
+			\memoline{SUBJECT}{Summary of Global Trade Network Fragmentation (2010--2024)}
+		\end{tabular}
+		\rule{\textwidth}{1pt}
+	\end{flushleft}
+	
+	\section*{1. Purpose}
+	The purpose of this memorandum is to synthesize the findings of the article regarding the shifting dynamics between G7 and BRICS+ trade blocs. This research utilizes the structural analysis techniques mentioned in the \textit{Theoretical Framework} (Section 2) and results extracted from the network data (Section 3).
+	
+	\section*{2. Data and Methodology}
+	As detailed in \textbf{Section 2.7 (Data)}, the study covers global trade network evolution from 2010 to 2024. Table~\ref{tab:summary} provides the descriptive statistics for this coverage.
+	
+	\begin{table}[h]
+		\centering
+		\caption{Key Trade Network Indicators (Class 3: Tables)}
+		\begin{tabular}{@{}lll@{}}
+			\toprule
+			\textbf{Metric} & \textbf{Value/Trend} & \textbf{Reference} \\ \midrule
+			G7--BRICS+ Share & Declining since 2018 & Figure 1 \\
+			Network Modularity ($Q$) & Negative (Interconnected) & Figure 2 \\
+			Adjusted Rand Index & Peak in 2024 & Figure 3 \\
+			Resilience Loss Index & High Fragility in 2023 & Figure 4 \\ \bottomrule
+		\end{tabular}
+		\label{tab:summary}
+	\end{table}
+	
+	\section*{3. Summary of Visual Evidence}
+	Following the \textit{Class 3} guidelines on figures and captions, we highlight:
+	\begin{itemize}
+		\item \textbf{Decoupling (Fig. 1):} A clear downward trend in $S_t$ following the 2018 trade war and 2022 invasion.
+		\item \textbf{Persistence (Fig. 2):} The absence of structural fragmentation; G7 and BRICS+ remain "structurally inseparable."
+		\item \textbf{Realignment (Fig. 3):} A statistically significant shift toward "bloc-aware" trade patterns in 2024.
+	\end{itemize}
+	
+	
+	
+	\section*{5. Conclusion}
+	While trade volumes suggest a "decoupling," the network modularity indicates that the global system has not yet fragmented. However, the rise in Systemic Vulnerability (RLI) suggests a more fragile equilibrium.
+	
+	\vspace{1cm}
+	\rule{5cm}{0.4pt} \\
+	\textit{Authorized by: Owais Mujtaba. (Ref: S0885-2308)}
+	
+\end{document}
