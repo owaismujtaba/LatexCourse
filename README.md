@@ -4,14 +4,19 @@ This repository contains a collection of LaTeX projects developed as part of an 
 
 ## Project Structure
 
-- **[Basics/](file:///home/owais/Desktop/LatexCourse/Basics/)**: An introductory guide demonstrating core LaTeX features.
-    - Main File: `Basics/basics.tex`
-    - Demonstrates text styles, font manipulations, math, and framed environments.
-- **[poster/](file:///home/owais/Desktop/LatexCourse/poster/)**: A research poster (A0 size) titled *"Fragmentation Dynamics in Global Trade: G7 vs. BRICS+"*.
-    - Main File: `poster/poster.tex`
-    - Features data-driven visualizations of trade decoupling and network modularity using `beamerposter`.
-- **[presentations/](file:///home/owais/Desktop/LatexCourse/presentations/)**: Beamer slides for project presentations.
-- **[Biblo/](file:///home/owais/Desktop/LatexCourse/Biblo/)**: Showing biblograpy usage using bibitem and bibtex
+- **[Basics/](file:///home/owais/Desktop/LatexCourse/Basics/)**: Core LaTeX features and guide.
+    - `Basics/basics.tex` ([View PDF](file:///home/owais/Desktop/LatexCourse/Basics/basics.pdf))
+    - `Basics/book.tex` ([View PDF](file:///home/owais/Desktop/LatexCourse/Basics/book.pdf))
+- **[poster/](file:///home/owais/Desktop/LatexCourse/poster/)**: Research poster on trade fragmentation.
+    - `poster/poster.tex` ([View PDF](file:///home/owais/Desktop/LatexCourse/poster/poster.pdf))
+- **[presentations/](file:///home/owais/Desktop/LatexCourse/presentations/)**: Beamer presentation slides.
+    - `presentations/document.tex` ([View PDF](file:///home/owais/Desktop/LatexCourse/presentations/document.pdf))
+- **[Biblo/](file:///home/owais/Desktop/LatexCourse/Biblo/)**: Bibliography management examples.
+    - `Biblo/biblography.tex` ([View PDF](file:///home/owais/Desktop/LatexCourse/Biblo/biblography.pdf))
+    - `Biblo/paperusing.bib.tex` ([View PDF](file:///home/owais/Desktop/LatexCourse/Biblo/paperusing.bib.pdf))
+- **[letters_etc/](file:///home/owais/Desktop/LatexCourse/letters_etc/)**: Miscellaneous LaTeX documents.
+    - `letters_etc/letter.tex` ([View PDF](file:///home/owais/Desktop/LatexCourse/letters_etc/letter.pdf))
+    - `letters_etc/memo.tex` ([View PDF](file:///home/owais/Desktop/LatexCourse/letters_etc/memo.pdf))
 
 ## Getting Started
 
