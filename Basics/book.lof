@@ -1,0 +1,13 @@
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Preprocessing pipeline for the sEEG and audio signals, showing the transition from raw neural spikes to analytic envelopes.}}{7}{figure.2.1}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Detailed architecture of the NeuroIncept Decoder, illustrating the Inception and Recurrent modules.}}{8}{figure.2.2}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Training and validation loss curves across epochs.}}{12}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Distribution of Pearson Correlation Coefficients (PCC) across subjects.}}{12}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Qualitative comparison between original (top) and predicted (bottom) log-Mel spectrograms for a sample Dutch word.}}{13}{figure.3.3}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }

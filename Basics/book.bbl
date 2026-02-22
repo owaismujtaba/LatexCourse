@@ -1,0 +1,112 @@
+\begin{thebibliography}{10}
+
+\bibitem{band1}
+H.~Akbari, B.~Khalighinejad, J.~L. Herrero, A.~D. Mehta, and N.~Mesgarani.
+\newblock Towards reconstructing intelligible speech from the human auditory
+  cortex.
+\newblock {\em Scientific Reports}, 9(1):874, 2019.
+
+\bibitem{chang2015contemporary}
+E.~F. Chang, K.~P. Raygor, and M.~S. Berger.
+\newblock Contemporary model of language organization: an overview for
+  neurosurgeons.
+\newblock {\em Journal of Neurosurgery}, 122(2):250--261, 2015.
+
+\bibitem{bib9}
+X.~Chen et~al.
+\newblock A neural speech decoding framework leveraging deep learning and
+  speech synthesis.
+\newblock {\em Nature Machine Intelligence}, 6(4):467--480, 2024.
+
+\bibitem{gru}
+Rahul Dey and Fathi~M. Salem.
+\newblock Gate-variants of gated recurrent unit (gru) neural networks.
+\newblock In {\em 2017 IEEE 60th International Midwest Symposium on Circuits
+  and Systems (MWSCAS)}, pages 1597--1600, 2017.
+
+\bibitem{edraki2022spectro}
+A.~Edraki, W.-Y. Chan, J.~Jensen, and D.~Fogerty.
+\newblock Spectro-temporal modulation glimpsing for speech intelligibility
+  prediction.
+\newblock {\em Hearing Research}, 426:108620, 2022.
+
+\bibitem{Gonzalez2020}
+J.~A. Gonzalez-Lopez, A.~Gomez-Alanis, J.~M. Martin~Donas, J.~L.
+  Perez-Córdoba, and A.~M. Gomez.
+\newblock Silent speech interfaces for speech restoration: A review.
+\newblock {\em IEEE Access}, 8:177995--178021, 2020.
+
+\bibitem{bib6}
+C.~Herff, G.~D. Johnson, L.~Diener, J.~J. Shih, D.~J. Krusienski, and
+  T.~Schultz.
+\newblock Towards direct speech synthesis from ecog: A pilot study.
+\newblock In {\em 2016 IEEE EMBC}, 2016.
+
+\bibitem{jullien2021screening}
+S.~Jullien.
+\newblock Screening for language and speech delay in children under five years.
+\newblock {\em BMC Pediatrics}, 21(S1), 2021.
+
+\bibitem{bib2}
+James Law, James Boyle, Frances Harris, and A.
+\newblock Prevalence and natural history of primary speech and language delay:
+  findings from a systematic review of the literature.
+\newblock {\em International Journal of Language \& Communication Disorders},
+  35(2):165--188, 2000.
+
+\bibitem{neuro2}
+M.~A. Lebedev and M.~A.~L. Nicolelis.
+\newblock Brain-machine interfaces: past, present and future.
+\newblock {\em Trends in Neurosciences}, 29(9):536--546, 2006.
+
+\bibitem{bib7}
+S.~Martin et~al.
+\newblock Decoding spectrotemporal features of overt and covert speech from the
+  human cortex.
+\newblock {\em Frontiers in Neuroengineering}, 7, 2014.
+
+\bibitem{librosa}
+B.~McFee et~al.
+\newblock librosa: Audio and music signal analysis in python.
+\newblock In {\em Proceedings of the 14th Python in Science Conference}, 2015.
+
+\bibitem{bib1}
+{National Institute on Deafness and Other Communication Disorders}.
+\newblock Quick statistics about voice, speech, language.
+\newblock NIDCD, 2016.
+
+\bibitem{neuro1}
+M.~A.~L. Nicolelis.
+\newblock Brain-machine interfaces to restore motor function and probe neural
+  circuits.
+\newblock {\em Nature Reviews Neuroscience}, 4(5):417--422, 2003.
+
+\bibitem{band2}
+R.~Song et~al.
+\newblock Decoding silent speech from high-density surface electromyographic
+  data using transformer.
+\newblock {\em Biomedical Signal Processing and Control}, 80:104298, 2023.
+
+\bibitem{inception}
+C.~Szegedy et~al.
+\newblock Going deeper with convolutions.
+\newblock In {\em 2015 IEEE Conference on Computer Vision and Pattern
+  Recognition (CVPR)}, pages 1--9, 2015.
+
+\bibitem{ifaCorpus}
+R.~J. J.~H. van Son, Dmin. Binnenpoorte, and L.~C.~W. Pols.
+\newblock The ifa corpus: a phonemically segmented dutch 'open source' speech
+  database.
+\newblock In {\em Data Archiving and Networked Services (DANS)}, 2001.
+
+\bibitem{verwoert2022dataset}
+M.~Verwoert et~al.
+\newblock Dataset of speech production in intracranial electroencephalography.
+\newblock {\em Scientific Data}, 9(1), 2022.
+
+\bibitem{neuro3}
+B.~S. Wilson and M.~F. Dorman.
+\newblock Cochlear implants: A remarkable past and a brilliant future.
+\newblock {\em Hearing Research}, 242(1--2):3--21, 2008.
+
+\end{thebibliography}
