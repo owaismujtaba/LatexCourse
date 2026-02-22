@@ -1,0 +1,190 @@
+\documentclass[25pt, a0paper, portrait, blockverticalspace=10mm, colspace=10mm]{tikzposter}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{bm}
+\usepackage{cmbright}
+\usepackage{eso-pic}
+
+
+\title{\parbox{\linewidth}{\centering \textbf{The Architecture of Alignment:} \\ \huge Quantifying Geoeconomic Fragmentation}}
+\author{Owais Mujtaba}
+\institute{CITIC | University of Granada}
+
+
+\definecolor{primary}{HTML}{0F172A}  
+\definecolor{accent}{HTML}{10B981}   
+\definecolor{bgLight}{HTML}{F8FAFC}  
+\definecolor{blockTitle}{HTML}{CBD5E1}
+
+\definecolorstyle{AcademicModern}{
+	\definecolor{colorOne}{HTML}{F1F5F9}   
+	\definecolor{colorTwo}{HTML}{E2E8F0}   
+	\definecolor{colorThree}{HTML}{0F172A} 
+}{
+	\colorlet{backgroundcolor}{colorOne}
+	\colorlet{blocktitlebgcolor}{colorTwo}
+	\colorlet{blocktitlefgcolor}{primary}
+	\colorlet{blockbodybgcolor}{white}
+	\colorlet{blockbodyfgcolor}{black}
+}
+
+\newcommand{\boldemeq}[1]{{\color{accent}\bm{#1}}}
+
+\usetheme{Default}
+\usecolorstyle{AcademicModern}
+
+\begin{document}
+	\maketitle
+	
+	\AddToShipoutPictureFG*{
+		\AtPageCenter{
+			\makebox(0,0)[c]{
+				\begin{tikzpicture}
+					\node[opacity=0.05] {\includegraphics[width=0.8\paperwidth]{logo.png}};
+				\end{tikzpicture}
+			}
+		}
+	}
+	\begin{columns}
+
+		\column{0.30}
+		\block{Introduction}{				
+			\begin{itemize}
+				\item \textbf{The Post-Cold War Paradigm:} The era of ``hyperglobalization'' was defined by market efficiency superseding Westphalian security concerns \cite{friedman2005}.
+				
+				\item \textbf{Systemic Rupture:} The liberal consensus is destabilized by:
+				\begin{itemize}
+					\item \textbf{U.S.--China trade war:} Strategic decoupling.
+					\item \textbf{COVID-19 pandemic:} Supply chain brittleness.
+					\item \textbf{Invasion of Ukraine:} Weaponized interdependence.
+				\end{itemize}
+				
+				\item \textbf{Research Question:} Is the global system structurally bifurcating into rival blocs or merely adapting routes within a singular integrated topology?
+				
+				\item \textbf{Approach:} Moving beyond gravity models toward \textbf{Network Topology Analysis} to identify shifts from global integration to modular intra-bloc structures.
+			\end{itemize}
+		}
+		
+		\block{Research Hypotheses}{
+			\textbf{H1: G7--BRICS Strategic Decoupling} \\
+			Quantifying the trade relationship using bilateral export data:
+			\begin{center}
+				\[ \boldemeq{ S_t = \frac{\sum_{i \in \mathcal{G}} \sum_{j \in \mathcal{B}} X_{i,j,t} + \sum_{i \in \mathcal{B}} \sum_{j \in \mathcal{G}} X_{i,j,t}}{\sum_{i} \sum_{j} X_{i,j,t}} } \]
+			\end{center}
+			
+			\textbf{H2: Consensus Connector Stability} \\
+			Structural influence measured through weighted betweenness centrality:
+			\begin{center}
+				\[ \boldemeq{ S_i = 1 - \frac{\sigma_{BC}}{\mu_{BC}} } \]
+			\end{center}
+			
+			\textbf{H3: Network Modularity} \\
+			Newman-Girvan modularity index to detect systemic fragmentation:
+			\begin{center}
+				\[ \boldemeq{ Q_t = \frac{1}{2m_t} \sum_{i,j} \left( A_{ij}^t - \frac{k_i^t k_j^t}{2m_t} \right) \delta(c_i, c_j) } \]
+			\end{center}
+			
+			\textbf{H4: Community Alignment} \\
+			Validation via Z-scores derived from Monte Carlo permutations:
+			\begin{center}
+				\[ \boldemeq{ Z = \frac{ARI_{obs} - \mu_{null}}{\sigma_{null}} } \]
+			\end{center}
+			
+			\textbf{H5: Systemic Fragility} \\
+			Resilience Loss Index (RLI) based on global network efficiency:
+			\begin{center}
+				\[ \boldemeq{ \text{RLI}_t = 1 - \frac{E_t(\mathcal{G}_t \setminus \mathcal{C}_t)}{E_t(\mathcal{G}_t)} } \]
+			\end{center}
+		}
+
+		\block{Data \& Methodology}{
+			\begin{itemize}
+				\item \textbf{Data Universe:} Global bilateral export datasets from UN COMTRADE (2010--2024), covering 95\% of global trade value.
+				\item \textbf{Node Classification:} States categorized into G7, BRICS+ (pre and post-2024 expansion), and Global South cohorts.
+				\item \textbf{Graph Construction:} Directed, weighted adjacency matrices $A_{ij}$ where weights represent nominal USD trade volumes.
+				\item \textbf{Statistical Baseline:} 10,000 Monte Carlo permutations to establish significance for ARI and Modularity scores.
+			\end{itemize}
+		}
+
+		% --- COLUMN 2: Fragmentation & Centrality ---
+		\column{0.36}
+		\block{The Decline of G7--BRICS+ Trade Interdependence}{
+			\begin{center}
+				\includegraphics[width=0.9\linewidth]{G7_BRICS_Decoupling_Figure.pdf}
+				\captionof{figure}{\textbf{Declining G7--BRICS+ Trade Integration (2010--2024).}}
+				\label{fig:G7_BRICS}
+			\end{center}
+			
+			\begin{itemize}
+				\item \textbf{Structural Trade Contraction:} \normalfont The G7--BRICS+ global trade share ($S_t$) fell from 6.1\% (2010) to 4.8\% (2024), a 21\% reduction driven by a steady annual decline of $\approx$1.8\% ($\beta = -0.0177, p < 0.001$).
+				\item \textbf{Post-2018 Decoupling:} \normalfont A significant structural break ($\Delta S = -0.72, p = 0.0006$) coincides with U.S.-China tensions; 2024 trade levels sit 1.67\% below pre-2018 projections.
+				\item \textbf{Volatility and Robustness:} \normalfont Trade flow variance increased 3.60x due to geopolitical fragmentation; placebo tests (2014) confirm this shift is uniquely tied to the post-2018 landscape.
+			\end{itemize}
+		}
+		
+		\block{The Persistence of Strategic Trade Intermediaries}{
+			\begin{itemize}
+				\item \textbf{The Stability Triad} USA, China, and France are dominant global brokers with mean betweenness $> 0.025$.
+				\item \textbf{US Invariance} Primary transatlantic/transpacific coordinate with the highest stability index ($S_i = 0.92$).
+				\item \textbf{European Anchors} France ($S_i = 0.77$) surpasses Germany ($S_i = 0.74$) via EU and Francophone networks.
+				\item \textbf{Logistical Bridges} Netherlands ($S_i = 0.80$) and Spain ($S_i = 0.83$) act as gatekeepers via port/financial infrastructure.
+				\item \textbf{Endpoint Paradox} Manufacturing hubs (Vietnam $S_i = -0.66$, Mexico $S_i = 0.33$) show near-zero brokerage ($BC < 0.0004$).
+				\item \textbf{Influence vs. Volume} High export volumes $\neq$ structural power; systemic influence relies on bridging disconnected partners.
+			\end{itemize}
+		}
+		
+		\block{The Absence of Network Fragmentation}{
+			\begin{center}
+				\includegraphics[width=0.80\linewidth, height=7cm]{H3_Modularity.pdf}
+				\captionof{figure}{\textbf{Absence of Structural Fragmentation, 2010--2024.}}
+				\label{fig:H3}
+			\end{center}
+			\begin{itemize}
+				\item \textbf{ Global Systemic Cohesion (H3):} \normalfont Mann-Kendall tests ($p = 0.075$) reject fragmentation into discrete regional blocs; the network remains "disassortative" ($-0.015 > Q > -0.031$), confirming G7 and BRICS+ economies are structurally inseparable.
+				\item \textbf{Crisis-Induced Interdependency:} \normalfont Supply chain stress reinforces cross-bloc ties rather than severing them; notably, modularity reached its most negative value ($Q = -0.031$) during the COVID-19 pandemic, highlighting a reliance on existing global networks.
+				\item \textbf{Inertial Integration and Costs:} \normalfont Geopolitical shocks (2018 Trade War, 2022 Invasion) failed to trigger positive modularity, as deep-seated manufacturing complementarities and prohibitive decoupling costs maintain a unified topological core despite "de-risking" rhetoric.
+			\end{itemize}
+		}
+		
+		% --- COLUMN 3: Alignment & Resilience ---
+		\column{0.34}
+		\block{The Emergence of Geopolitical Bloc Formation}{
+			\begin{center}
+				\includegraphics[width=0.80\linewidth, height=7cm]{trade_alignment_ari_zscore.pdf}
+				\captionof{figure}{\textbf{Geopolitical Realignment of Global Trade, 2010--2024.} }
+				\label{fig:trade_alignment}
+			\end{center}
+			\begin{itemize}
+				\item 2024 Regime Shift: \normalfont Community detection reveals a fundamental transition from "bloc-blind" trade ($ARI < 0.15$) to geopolitical alignment ($Z\text{-score} = 3.06, p < 0.01$), marking the end of the post-1991 era.
+				\item Rapid Binarization: \normalfont The alignment index leaped to $ARI = 0.28$ in 2024, driven by the BRICS+ expansion and G7 "de-risking" policies, indicating states are significantly more likely to trade within their own blocs.
+				\item The ARI-Modularity Paradox: \normalfont While the system remains topologically unified, trade is increasingly concentrated within blocs; this mirrors a Cold War-style topology where connectivity persists despite a heavy geopolitical overlay.
+			\end{itemize}
+		}
+		
+		\block{The Evolution of Systemic Vulnerability}{
+			\begin{center}
+				\includegraphics[width=0.80\linewidth, height=7cm]{RLI_ZScore.pdf}
+				\captionof{figure}{\textbf{Temporal Evolution of Systemic Vulnerability, 2010--2024.} }
+				\label{fig:RLI}
+			\end{center}
+			\begin{itemize}
+				\item \textbf{ Systemic Fragility (H5):} \normalfont A 15-year trajectory of increasing vulnerability saw the Resilience Loss Index (RLI) rise 18.5\% ($0.081$ to $0.096$), driven by a diffuse fragility across neutral intermediary nodes rather than just "super-connectors."
+				\item \textbf{ The 2024 Inflection Point:} \normalfont The RLI recorded its first significant decade-long decrease (falling to $0.089$), signaling a strategic shift toward supply chain diversification and "China Plus One" strategies.
+				\item \textbf{Security vs. Efficiency: }\normalfont Recent industrial policies and export controls mark a move toward systemic restructuring, prioritizing geopolitical security over market-driven concentration in a more resilient, albeit costlier, global framework.
+			\end{itemize}
+		}
+		
+		\block{Conclusion}{
+			\begin{itemize}
+				\item \textbf{Inertial Integration vs. Structural Power:} \normalfont Despite "weaponized" interdependence, deep functional complementarities (minerals, semiconductors) resist modular fragmentation; while hubs like Vietnam and Mexico grow, systemic influence remains concentrated in the \textit{Stability Triad} (USA, China, France).
+				\item \textbf{The 2024 Structural Rupture:} \normalfont A significant surge in the Adjusted Rand Index (ARI) paired with a decadal dip in the Resilience Loss Index (RLI) signals the end of "bloc-blind" commerce and a fundamental rewiring of the global trade topology.
+				\item \textbf{Strategic Trade-offs and Bridge Nations:} \normalfont The post-1991 era of efficiency-led hyperglobalization is being replaced by a "re-binarized" system prioritizing security; the stability of this high-friction order now depends on "stabilizing bridges" (e.g., Netherlands, Spain) to maintain cross-bloc connectivity.
+			\end{itemize}
+		}
+	\end{columns}
+\end{document}
